@@ -1,0 +1,32 @@
+﻿@using EquipoTutorialLista1.ViewModels
+@model EquipoCrearViewModel
+
+@{
+    ViewData["Title"] = "Crear";
+}
+
+<h1 class="text-center my-3">Crear Equipo</h1>
+<div class="row">
+    <div class="col-8 offset-2">
+        <form asp-action="Crear">
+            <div class="form-group mb-3">
+                <label asp-for="Equipo.EquipoNombre" class="form-label">Nombre Equipo</label>
+                <input asp-for="Equipo.EquipoNombre" class="form-control" />
+            </div>
+            <div class="form-floating">
+                <select asp-for="Entrenador.EntrenadorId" class="form-select" asp-items="@Model.ListaEntrenadores">
+                    <option>-- Seleccione entrenador --</option>
+                </select>
+                <label asp-for="Entrenador.EntrenadorNombre" class="form-label">Lista Entrenadores de Fútbol</label>
+            </div>
+            <div class="form-group text-center my-3">
+                <input type="submit" value="Crear Equipo" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-danger">Volver a la Lista</a>
+</div>
+

@@ -1,0 +1,28 @@
+﻿@model IEnumerable<EquipoTutorialLista1.Models.Entrenador>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">Lista Entrenadores</h1>
+
+<p>
+    <a asp-action="Crear" class="btn btn-primary">Crear Entrenador</a>
+</p>
+<table class="table table-striped text-center">
+    <thead>
+        <tr class="table-dark">
+            <th>
+                Entrenadores
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EntrenadorNombre)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
